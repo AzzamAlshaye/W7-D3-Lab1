@@ -12,14 +12,14 @@ export default function Navbar() {
      ${
        pathname === path
          ? "bg-yellow-400 text-gray-900" /* active = yellow */
-         : "text-white hover:bg-yellow-300 hover:text-gray-900" /* hover = lighter yellow */
+         : "text-white hover:bg-yellow-300 hover:text-gray-900"
      }`;
 
   return (
-    <nav className="bg-gradient-to-r from-orange-600 via-pink-500 to-purple-600 text-white shadow-md relative">
+    <nav className="bg-gradient-to-r from-green-600 via-emerald-500 to-teal-600 text-white shadow-md relative">
       <div className="container mx-auto flex items-center justify-between lg:justify-normal lg:gap-10 p-4">
         {/* Brand */}
-        <Link to="/" className="flex items-center space-x-2 justify-center">
+        <Link to="/" className="flex items-center space-x-2">
           <img src="icon.webp" alt="Shopful icon" className="h-12" />
           <span className="text-xl font-bold">Shopful</span>
         </Link>
@@ -32,18 +32,12 @@ export default function Navbar() {
           <Link to="/shop" className={linkClass("/shop")}>
             Shop Now
           </Link>
-          {/* <Link to="/apply" className={linkClass("/apply")}>
-            Apply
-          </Link>
-          <Link to="/applications" className={linkClass("/applications")}>
-            My Applications
-          </Link> */}
         </div>
 
         {/* Burger button */}
         <button
           onClick={() => setMenuOpen((o) => !o)}
-          className="lg:hidden text-white focus:outline-none"
+          className="lg:hidden focus:outline-none"
         >
           {menuOpen ? <IoClose size={28} /> : <IoMenu size={28} />}
         </button>
@@ -51,7 +45,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600 overflow-hidden transition-[max-height] duration-300
+        className={`lg:hidden bg-gradient-to-r from-green-500 via-emerald-400 to-teal-500 overflow-hidden transition-[max-height] duration-300
           ${menuOpen ? "max-h-screen" : "max-h-0"}`}
       >
         <ul className="flex flex-col">

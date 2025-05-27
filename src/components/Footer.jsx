@@ -5,14 +5,14 @@ import { FaTwitter, FaDiscord, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-orange-600 via-pink-500 to-purple-600 text-gray-100">
+    <footer className="bg-gradient-to-r from-green-600 via-emerald-500 to-teal-600 text-gray-100">
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Brand & Social */}
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-white">Shopful</h3>
           <p className="text-gray-200">
-            We’re dedicated to providing exceptional services. We value passion,
-            commitment, and innovation in everything we do.
+            We’re dedicated to providing exceptional service, with passion,
+            commitment, and innovation at every step.
           </p>
           <div className="flex space-x-4">
             {[FaTwitter, FaDiscord, FaGithub].map((Icon, i) => (
