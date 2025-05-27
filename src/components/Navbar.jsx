@@ -1,7 +1,6 @@
 // src/components/Navbar.jsx
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router";
-import { FaGamepad } from "react-icons/fa";
 import { IoMenu, IoClose } from "react-icons/io5";
 
 export default function Navbar() {
@@ -12,17 +11,17 @@ export default function Navbar() {
     `block px-6 py-3 font-medium rounded-md transition
      ${
        pathname === path
-         ? "bg-white text-gray-900"
-         : "text-white hover:bg-gray-700"
+         ? "bg-yellow-400 text-gray-900" /* active = yellow */
+         : "text-white hover:bg-yellow-300 hover:text-gray-900" /* hover = lighter yellow */
      }`;
 
   return (
-    <nav className="bg-gray-900 text-white shadow-md relative">
+    <nav className="bg-gradient-to-r from-orange-600 via-pink-500 to-purple-600 text-white shadow-md relative">
       <div className="container mx-auto flex items-center justify-between lg:justify-normal lg:gap-10 p-4">
         {/* Brand */}
         <Link to="/" className="flex items-center space-x-2 justify-center">
-          <img src="react-icon.webp" alt=" website icon" className="h-12" />
-          <span className="text-xl font-bold">My Compeny</span>
+          <img src="icon.webp" alt="Shopful icon" className="h-12" />
+          <span className="text-xl font-bold">Shopful</span>
         </Link>
 
         {/* Desktop links */}
@@ -30,16 +29,15 @@ export default function Navbar() {
           <Link to="/" className={linkClass("/")}>
             Home
           </Link>
-          <Link to="/about" className={linkClass("/about")}>
-            About
+          <Link to="/shop" className={linkClass("/shop")}>
+            Shop Now
           </Link>
-          <Link to="/apply" className={linkClass("/apply")}>
+          {/* <Link to="/apply" className={linkClass("/apply")}>
             Apply
           </Link>
-
           <Link to="/applications" className={linkClass("/applications")}>
             My Applications
-          </Link>
+          </Link> */}
         </div>
 
         {/* Burger button */}
@@ -53,7 +51,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden bg-gray-900 overflow-hidden transition-[max-height] duration-300
+        className={`lg:hidden bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600 overflow-hidden transition-[max-height] duration-300
           ${menuOpen ? "max-h-screen" : "max-h-0"}`}
       >
         <ul className="flex flex-col">
@@ -66,32 +64,13 @@ export default function Navbar() {
               Home
             </Link>
           </li>
-
           <li>
             <Link
-              to="/about"
+              to="/shop"
               onClick={() => setMenuOpen(false)}
-              className={linkClass("/about")}
+              className={linkClass("/shop")}
             >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/Apply"
-              onClick={() => setMenuOpen(false)}
-              className={linkClass("/Apply")}
-            >
-              Apply
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/applications"
-              onClick={() => setMenuOpen(false)}
-              className={linkClass("/applications")}
-            >
-              My applications
+              Shop
             </Link>
           </li>
         </ul>
